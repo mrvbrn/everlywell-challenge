@@ -1,10 +1,9 @@
 import React, { useState, useEffect, useCallback } from "react";
 import axios from 'axios'; 
-import { Link, Route
-} from "react-router-dom";
+import { Link } from "react-router-dom";
 
 import './App.css';
-import Recipes from "./Recipes";
+import SearchBox from "./SearchBox";
 
 
 const App = () => {
@@ -27,10 +26,11 @@ const App = () => {
     if(mealData.length < 5){
       getMealData()
     }
-  },[mealData])
+  },[mealData, getMealData])
 
   return (
     <div className="App">
+      <h2>Recipes of the Day</h2>
       {mealData && mealData.map((meal) => {
         return(
           <ul key={meal[0].idMeal}>
@@ -40,6 +40,7 @@ const App = () => {
           </ul>
         )
       })}
+      <SearchBox/>
     </div>
   );
 }
