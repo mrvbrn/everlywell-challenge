@@ -27,22 +27,28 @@ const App = () => {
       getMealData()
     }
   },[mealData, getMealData])
-
+  console.log(mealData)
   return (
     <div className="App">
-      <h2>Recipes of the Day</h2>
-      {mealData && mealData.map((meal) => {
-        return(
-          <ul key={meal[0].idMeal}>
-            <li>
-              <Link to={`mealName=${meal[0].strMeal}`}>{meal[0].strMeal}</Link>
-            </li>
-          </ul>
-        )
-      })}
       <SearchBox/>
+      <div className="contentOfRecipes">
+      <h2 className="headerText">Recipes of the Day</h2>
+        {mealData && mealData.map((meal) => {
+          return(
+            <ol key={meal[0].idMeal} className="mealContainer">
+              <li>
+                <Link to={`mealName=${meal[0].strMeal}`} className="link">{meal[0].strMeal}</Link>
+              </li>
+            </ol>
+          )
+        })}
+      </div>
     </div>
   );
 }
 
 export default App;
+
+ // <div className="imageContainer">
+ //                      <img src={meal[0].strMealThumb} alt={meal.strMeal}/>
+ //                    </div>

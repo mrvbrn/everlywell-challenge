@@ -1,38 +1,85 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;1,300&display=swap');
+
+/*-------------------------------------------*/
+/*BASIC STYLING*/
+/*-------------------------------------------*/
+
+*{
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+}
+html,
+body{
+    background-color: #fff;
+    color: #555;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    font-size: 20px;
+    text-rendering: optimizeLegibility;
+    overflow-x: hidden;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.link{
+    text-decoration: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+
+/*-------------------------------------------*/
+/*HEADER*/
+/*-------------------------------------------*/
+.headerText{
+    text-align: center;
+    font-weight: 100%;
+    font-size: 190%;
+    margin-bottom: 50px;
+}
+/*-------------------------------------------*/
+/*MEAL*/
+/*-------------------------------------------*/
+
+.mealContainer{
+    display: flex;
+    justify-content: center;
+    width: 60%;
+    margin-left: 20%;
+    display: inline-block;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.mealContainer img{
+    width: 200px;
+    height:auto;
+    border-radius: 50%;
+    margin-left: 20%;
+}
+.imageContainer{
+    width: 50%;
+    height: auto;
+    margin-bottom: 20px;
+
+}
+.mealContent{
+    width: 50%;
 }
 
-.App-link {
-  color: #61dafb;
-}
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
+/*
+ol {
+   list-style: none;
+   counter-reset: item;
+ }
+
+
+ li:before {
+   content: counter(item);
+   background: #00B4CC;
+   border-radius: 100%;
+   color: white;
+   width: 1.2em;
+   text-align: center;
+   display: inline-block;
+ }
+*/
+
+
