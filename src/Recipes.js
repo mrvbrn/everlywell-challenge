@@ -10,19 +10,17 @@ const Recipes = (props) => {
   const location = useLocation()
   const parsed = queryString.parse(location.pathname);
   const name = parsed["/mealName"]
-  console.log(parsed["/mealName"]);
 
 
   const getMealData = useCallback(async() => {
     try{
       const response = await axios(`https://www.themealdb.com/api/json/v1/1/search.php?s=${name}`)
-      console.log(response.data.meals)
       setMealData(response.data.meals)
     
     }catch(err){
       console.log(err)
     }
-  },[setMealData])
+  },[setMealData, name])
 
   useEffect(() => {
     getMealData()
