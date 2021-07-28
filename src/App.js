@@ -3,7 +3,6 @@ import axios from 'axios';
 import { Link } from "react-router-dom";
 
 import './App.css';
-import SearchBox from "./SearchBox";
 
 
 const App = () => {
@@ -30,16 +29,20 @@ const App = () => {
   console.log(mealData)
   return (
     <div className="App">
-      <SearchBox/>
       <div className="contentOfRecipes">
       <h2 className="headerText">Recipes of the Day</h2>
         {mealData && mealData.map((meal) => {
           return(
-            <ol key={meal[0].idMeal} className="mealContainer">
-              <li>
-                <Link to={`mealName=${meal[0].strMeal}`} className="link">{meal[0].strMeal}</Link>
-              </li>
-            </ol>
+            <div key={meal[0].idMeal} className="mealContainer">
+              <div className="mealContent">
+                <h3>{meal[0].strMeal}</h3>
+                <p>{meal[0].strArea}, {meal[0].strCategory}</p>
+                <Link to={`mealName=${meal[0].strMeal}`} className="link"><span className="readText">READ MORE</span> <i className="fa fa-arrow-right"></i></Link>
+              </div>
+              <div>
+                <img src={meal[0].strMealThumb} alt={meal[0].strMeal}/>
+              </div>
+            </div>
           )
         })}
       </div>

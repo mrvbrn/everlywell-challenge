@@ -1,7 +1,11 @@
 .container{
   display: flex;
-  margin-top: 30px;
+  margin: 30px;
   flex-direction: column;
+}
+
+.subContainer{
+    margin-top: 60px;
 }
 
 .search {
@@ -51,34 +55,25 @@
 .content li{
   list-style: none;
   display: flex;
-  border-bottom: 1px solid grey;
+  border-bottom: 1px solid #E8E8E8;
   width: 80%;
   margin-top: 15px;
   margin-left: 15px;
 }
 
-.mealContent{
+.searchContent{
   margin-left: 30px;
   padding-top: 30px;
 }
-.mealContent p{
+
+.searchContent p{
     margin-bottom: 10px;
-}
-.mealText{
-    font-style: italic;
-    font-weight: 100px;
-    font-size: 80%;
 }
 
 .link{
     text-decoration: none;
     color:#000;
     display: flex;
-}
-.readText{
-    font-size: 80%;
-    font-weight: 400;
-    color: #000;
 }
 
 .link i{

@@ -5,14 +5,14 @@ import {
 } from "react-router-dom";
 
 import Recipes from "./Recipes";
-import App from "./App";
+import SearchBox from "./SearchBox";
 
 
 const RouterPage = () => {
   return (
     <Router>
       <div>
-          <Route exact path="/" component={App} />
+          <Route exact path="/" component={SearchBox} />
           <Route path="/mealName:mealName" component={Recipes} />
       </div>
     </Router>

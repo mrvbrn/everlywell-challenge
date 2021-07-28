@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import axios from 'axios'; 
 
 import "./SearchBox.css";
+import App from "./App";
 
 
 const SeachBox = () => {
@@ -42,8 +43,9 @@ const SeachBox = () => {
           <i className="fa fa-search"></i>
         </button>
       </div>
-      <div className="content">
-        {mealData && mealData.map((meal) => {
+     
+      <div className="subContainer">
+          {mealData ? mealData.map((meal) => {
         return(
           <ul key={meal.idMeal}>
             <li>
@@ -51,9 +53,9 @@ const SeachBox = () => {
               <div>
                 <img src={meal.strMealThumb} alt={meal.strMeal}/>
               </div>
-              <div className="mealContent">
+              <div className="searchContent">
                 <h2>{meal.strMeal}</h2>
-                <p className="mealText">{meal.strArea}, {meal.strCategory}</p>
+                <p>{meal.strArea}, {meal.strCategory}</p>
                 <Link to={`mealName=${meal.strMeal}`} className="link">
                   <span className="readText">READ MORE</span> <i className="fa fa-arrow-right"></i>
                 </Link>
@@ -62,7 +64,7 @@ const SeachBox = () => {
             </li>
           </ul>
         )
-      })}
+      }):<App/>}
       </div>
     </div>
   )
