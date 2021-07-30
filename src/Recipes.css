@@ -1,0 +1,66 @@
+.recipeContainer{
+    width: 60%;
+    height: 80%;
+    border: 3px solid #00B4CC;
+    margin: 5% 20%;
+    background-color: #f2f2f2
+
+}
+
+.recipeSubContent{
+    display: flex;
+    justify-content: space-around;
+    margin-left: 60px;
+}
+.recipeSubContent li{
+    list-style-type: square;
+}
+
+.mealName{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid #E8E8E8;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    line-height: 2;
+}
+.instructionsContent{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 10px 50px;
+
+}
+
+.ingredientsContent{
+    display: flex;
+    flex-direction: column;
+    align-items: right;
+    justify-content: center;
+
+}
+
+.subHeaderText{
+    font-size: 120%;
+    font-weight: 700;
+    border-bottom: 1px solid #E8E8E8;
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+.imageContainer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+    height: auto;
+}
+
+.imageContainer img{
+    width: 90%;
+    border:2px solid #00B4CC;
+   -webkit-box-shadow: 0 2px 2px #00B4CC;
+            box-shadow: 0 2px 2px #00B4CC;
+
+}

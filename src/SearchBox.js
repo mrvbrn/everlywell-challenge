@@ -55,7 +55,7 @@ const SeachBox = () => {
               </div>
               <div className="searchContent">
                 <h2>{meal.strMeal}</h2>
-                <p>{meal.strArea}, {meal.strCategory}</p>
+                <p className="categoryText">{meal.strArea}, {meal.strCategory}</p>
                 <Link to={`mealName=${meal.strMeal}`} className="link">
                   <span className="readText">READ MORE</span> <i className="fa fa-arrow-right"></i>
                 </Link>

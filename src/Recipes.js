@@ -1,8 +1,9 @@
 import React, { useState, useEffect, useCallback } from "react";
 import axios from 'axios'; 
 import { useLocation } from "react-router-dom";
-const queryString = require('query-string');
 
+import "./Recipes.css"
+const queryString = require('query-string');
 
 const Recipes = (props) => {
   const [mealData, setMealData] = useState()
@@ -26,15 +27,54 @@ const Recipes = (props) => {
     getMealData()
   },[getMealData])
 
-
+  console.log(mealData)
   return(
-    <div>
+    <div className="recipeContainer">
       {mealData && 
       <div>
-        {mealData[0].strIngredient1 && <li>{mealData[0].strIngredient1} </li>}
-        {mealData[0].strIngredient2 && <li>{mealData[0].strIngredient2} </li>}
-        {mealData[0].strIngredient3 && <li>{mealData[0].strIngredient3} </li>}
-        {mealData[0].strIngredient4 && <li>{mealData[0].strIngredient4}</li>}
+        <h1 className="mealName">{mealData[0]. strMeal}</h1>
+        <div className="recipeContent">
+          <div className="recipeSubContent">
+            <div className="ingredientsContent">
+            <p className="subHeaderText">Ingredients</p>
+            <div className="ingredientsText">
+            {mealData[0].strIngredient1 && <li>{mealData[0].strIngredient1} </li>}
+            {mealData[0].strIngredient2 && <li>{mealData[0].strIngredient2} </li>}
+            {mealData[0].strIngredient3 && <li>{mealData[0].strIngredient3} </li>}
+            {mealData[0].strIngredient4 && <li>{mealData[0].strIngredient4}</li>}
+            {mealData[0].strIngredient5 && <li>{mealData[0].strIngredient5}</li>}
+            {mealData[0].strIngredient6 && <li>{mealData[0].strIngredient6}</li>}
+            {mealData[0].strIngredient7 && <li>{mealData[0].strIngredient7}</li>}
+            {mealData[0].strIngredient8 && <li>{mealData[0].strIngredient8}</li>}
+            {mealData[0].strIngredient9 && <li>{mealData[0].strIngredient9}</li>}
+            {mealData[0].strIngredient10 && <li>{mealData[0].strIngredient10}</li>}
+            {mealData[0].strIngredient11 && <li>{mealData[0].strIngredient11}</li>}
+            {mealData[0].strIngredient12 && <li>{mealData[0].strIngredient12}</li>}
+            {mealData[0].strIngredient13 && <li>{mealData[0].strIngredient13}</li>}
+            {mealData[0].strIngredient14 && <li>{mealData[0].strIngredient14}</li>}
+            {mealData[0].strIngredient15 && <li>{mealData[0].strIngredient15}</li>}
+            {mealData[0].strIngredient16 && <li>{mealData[0].strIngredient16}</li>}
+            {mealData[0].strIngredient17 && <li>{mealData[0].strIngredient17}</li>}
+            {mealData[0].strIngredient18 && <li>{mealData[0].strIngredient18}</li>}
+            {mealData[0].strIngredient19 && <li>{mealData[0].strIngredient19}</li>}
+            {mealData[0].strIngredient20 && <li>{mealData[0].strIngredient20}</li>}
+            </div>
+            </div>
+            <div className="imageContainer">
+              <img src={mealData[0].strMealThumb} alt={mealData[0]. strMeal}/>
+            </div>
+          </div>
+          <div className="instructionsContent">
+          <p className="subHeaderText">Instructions</p>
+            {(mealData[0].strInstructions.split('.')).slice(0,(mealData[0].strInstructions.split('.').length-1)).map((inst)=>{
+              return(
+                <ul>
+                  <li>{inst}.</li>
+                </ul>
+              )
+            })}
+          </div>
+        </div>
       </div>
       }
    </div>
