@@ -36,7 +36,7 @@ const App = () => {
             <div key={meal[0].idMeal} className="mealContainer">
               <div className="mealContent">
                 <h3>{meal[0].strMeal}</h3>
-                <p>{meal[0].strArea}, {meal[0].strCategory}</p>
+                <p className="categoryText">{meal[0].strArea}, {meal[0].strCategory}</p>
                 <Link to={`mealName=${meal[0].strMeal}`} className="link"><span className="readText">READ MORE</span> <i className="fa fa-arrow-right"></i></Link>
               </div>
               <div>
