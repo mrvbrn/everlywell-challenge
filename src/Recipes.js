@@ -35,6 +35,9 @@ const Recipes = (props) => {
         <h1 className="mealName">{mealData[0]. strMeal}</h1>
         <div className="recipeContent">
           <div className="recipeSubContent">
+            <div className="imageContainer">
+              <img src={mealData[0].strMealThumb} alt={mealData[0]. strMeal}/>
+            </div>
             <div className="ingredientsContent">
             <p className="subHeaderText">Ingredients</p>
             <div className="ingredientsText">
@@ -60,9 +63,7 @@ const Recipes = (props) => {
             {mealData[0].strIngredient20 && <li>{mealData[0].strIngredient20}</li>}
             </div>
             </div>
-            <div className="imageContainer">
-              <img src={mealData[0].strMealThumb} alt={mealData[0]. strMeal}/>
-            </div>
+           
           </div>
           <div className="instructionsContent">
           <p className="subHeaderText">Instructions</p>
