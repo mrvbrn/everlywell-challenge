@@ -59,9 +59,10 @@
 @media only screen and (max-width:1023px){
     .recipeImageContainer img{
       width: 90%;
-      height: 300px;
+      height: auto;
       border:none;
    } 
+
     .mealName{
       margin-top: 10px;
       margin-left: 5px;
@@ -79,17 +80,17 @@
       width: 80%;
       height: auto;
       border:none;
-   }
-   .recipeImageContainer{
+    }
+    .recipeImageContainer{
       display: flex;
       margin-bottom: 30px;
-   }
-   .recipeSubContent{
+    }
+    .recipeSubContent{
       display: flex;
       flex-direction: column;
       width: 100%;   
-   }
-   .recipeContainer{
+    }
+    .recipeContainer{
       width: 100%;
     }
     .mealName{
