@@ -31,11 +31,11 @@ const Recipes = (props) => {
   return(
     <div className="recipeContainer">
       {mealData && 
-      <div>
+      <div className="mealNameContainer">
         <h1 className="mealName">{mealData[0]. strMeal}</h1>
         <div className="recipeContent">
           <div className="recipeSubContent">
-            <div className="imageContainer">
+            <div className="recipeImageContainer">
               <img src={mealData[0].strMealThumb} alt={mealData[0]. strMeal}/>
             </div>
             <div className="ingredientsContent">

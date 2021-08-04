@@ -1,4 +1,6 @@
 import React, { useState, useEffect, useCallback } from "react";
+import Keyboard from 'react-simple-keyboard';
+import 'react-simple-keyboard/build/css/index.css';
 import { Link } from "react-router-dom";
 import axios from 'axios'; 
 
@@ -10,6 +12,8 @@ const SeachBox = () => {
   const [mealData, setMealData] = useState()
   const [searchValue, setSearchValue] = useState("")
   const [name, setName] = useState("")
+  const [showKeyboard, setShowKeyboard] = useState(false)
+  const [isLoading, setIsLoading] = useState(false)
 
   const handleChange = (event) => {
     setSearchValue(event.target.value)
@@ -17,6 +21,23 @@ const SeachBox = () => {
 
   const handleClick = () => {
     setName(searchValue)
+    setSearchValue("")
+  }
+
+  const handleClickMobile = () => {
+    setName(searchValue)
+    setShowKeyboard(!showKeyboard)
+    setSearchValue("")
+  }
+
+  const handleKeyboard = button => {
+    if (button === "{enter}"){
+       setName(searchValue)
+       setShowKeyboard(false)
+    } 
+  }
+  const handleKeyboardChange = searchValue =>{
+    setSearchValue(searchValue)
   }
 
   const getMealData = useCallback(async() => {
@@ -30,22 +51,31 @@ const SeachBox = () => {
 
   useEffect(() => {
     if(name){
-      getMealData()
+      setIsLoading(true)
+      getMealData().then(() => setIsLoading(false))
     }
   },[getMealData, name])
   console.log(mealData)
 
-  return(
-    <div className="container">
-      <div className="search">
-        <input type="text" className="searchTerm" placeholder="Find a recipe" onChange={handleChange} value={searchValue}/>
-        <button type="submit" className="searchButton" onClick={handleClick}>
-          <i className="fa fa-search"></i>
-        </button>
+  if(isLoading){
+    return(
+      <div className="text">Loading...</div>
+    )
+  }
+
+  if(name && !mealData){
+    return(
+      <div className="text">
+      There is no recipes with this name
+      <button onClick={() => setName("")}>Main Page</button>
       </div>
-     
+    )
+  }
+
+  return(
+    <div className={showKeyboard ? "keyboardContainer" :"container"}> 
       <div className="subContainer">
-          {mealData ? mealData.map((meal) => {
+        {mealData ? mealData.map((meal) => {
         return(
           <ul key={meal.idMeal}>
             <li>
@@ -64,7 +94,33 @@ const SeachBox = () => {
             </li>
           </ul>
         )
-      }):<App/>}
+      })
+      :
+      <App/> }
+      <div>
+        <div className="search">
+          <input type="text" className="searchTerm" placeholder="Find a recipe" onChange={handleChange} value={searchValue}/>
+          <button type="submit" className="searchButton" onClick={handleClick}>
+            <i className="fa fa-search"></i>
+          </button>
+        </div>
+        <div className="searchMobile">
+          <button type="submit" className="searchButtonMobile" onClick={handleClickMobile}>
+            <i className="fa fa-search"></i>
+          </button>
+        </div>
+      </div> 
+      {showKeyboard &&
+        <div className="keyboardContainer">
+          <input type="text" className="searchTermMobile" placeholder="Find a recipe" onChange={handleChange} value={searchValue}/>
+          <div className="keyboard">
+            <Keyboard
+              onChange={handleKeyboardChange}
+              onKeyPress={handleKeyboard}
+              onClick={handleClick}
+            />
+          </div>
+        </div>}
       </div>
     </div>
   )
