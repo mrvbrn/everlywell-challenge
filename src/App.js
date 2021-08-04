@@ -39,7 +39,7 @@ const App = () => {
                 <p className="categoryText">{meal[0].strArea}, {meal[0].strCategory}</p>
                 <Link to={`mealName=${meal[0].strMeal}`} className="link"><span className="readText">READ MORE</span> <i className="fa fa-arrow-right"></i></Link>
               </div>
-              <div>
+              <div className="dayOfRecipesImage">
                 <img src={meal[0].strMealThumb} alt={meal[0].strMeal}/>
               </div>
             </div>
