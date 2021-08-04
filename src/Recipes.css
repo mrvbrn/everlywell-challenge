@@ -77,8 +77,8 @@
 
 @media only screen and (max-width:767px){
     .recipeImageContainer img{
-      width: 80%;
-      height: auto;
+      width: 90%;
+      height: 200px;
       border:none;
     }
     .recipeImageContainer{
