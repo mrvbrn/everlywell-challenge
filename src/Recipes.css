@@ -11,6 +11,7 @@
     display: flex;
     width: 80%;   
 }
+
 .recipeSubContent li{
     list-style-type: square;
 }
@@ -22,6 +23,11 @@
     margin-bottom: 30px;
     line-height: 2;
 }
+ .mealNameContainer{
+      width: 90%;
+      margin-right: 20px;
+    } 
+
 .instructionsContent{
     display: flex;
     flex-direction: column;
@@ -69,10 +75,6 @@
       font-size: 160%;
       width: 100%;
     }
-    .mealNameContainer{
-        width: 90%;
-        margin-right: 20px;
-    } 
 }
 
 @media only screen and (max-width:767px){
@@ -91,18 +93,23 @@
       width: 100%;   
     }
     .recipeContainer{
-      width: 100%;
+       width: 100%;
     }
     .mealName{
-       margin-top: 10px;
-       font-size: 150%;
+      margin-top: 10px;
+      font-size: 150%;
     }
     .ingredientsContent{
-        margin-left: 0;
-        display: block;
-      
+      margin-left: 0;
+      display: block;  
     }
     .instructionsContent{
-        width: 90%;
+      width: 90%;
+    }
+    .subHeaderText{
+      margin-bottom: 20px;
+    }
+    .ingredientsText{
+        margin-top: 10px;
     }
 }

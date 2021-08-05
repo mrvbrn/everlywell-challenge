@@ -27,7 +27,7 @@ const Recipes = (props) => {
     getMealData()
   },[getMealData])
 
-  console.log(mealData)
+
   return(
     <div className="recipeContainer">
       {mealData && 
@@ -62,10 +62,9 @@ const Recipes = (props) => {
             {mealData[0].strIngredient19 && <li>{mealData[0].strIngredient19}</li>}
             {mealData[0].strIngredient20 && <li>{mealData[0].strIngredient20}</li>}
             </div>
-            </div>
-           
-          </div>
-          <div className="instructionsContent">
+          </div>   
+        </div>
+        <div className="instructionsContent">
           <p className="subHeaderText">Instructions</p>
             {(mealData[0].strInstructions.split('.')).slice(0,(mealData[0].strInstructions.split('.').length-1)).map((inst)=>{
               return(
