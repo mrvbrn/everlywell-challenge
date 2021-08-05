@@ -51,7 +51,3 @@ const App = () => {
 }
 
 export default App;
-
- // <div className="imageContainer">
- //                      <img src={meal[0].strMealThumb} alt={meal.strMeal}/>
- //                    </div>
